@@ -1,9 +1,12 @@
 import App from 'next/app';
-
+import { ApolloProvider } from 'react-apollo';
+import { client } from 'api/quiz';
 function MyApp({ Component, pageProps }) {
   
   return (
-    <Component {...pageProps } />
+    <ApolloProvider client={client}>
+      <Component {...pageProps } /> 
+    </ApolloProvider>
   )
 }
 
